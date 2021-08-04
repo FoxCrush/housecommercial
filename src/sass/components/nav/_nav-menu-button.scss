@@ -1,0 +1,29 @@
+@media (max-width: $max-mobile-width) {
+  .nav-menu-button-container {
+    min-width: 30px;
+    display: inline-block;
+    cursor: pointer;
+    margin: auto 0px auto 15px;
+  }
+  .nav-menu-bar1,
+  .nav-menu-bar2,
+  .nav-menu-bar3 {
+    width: 100%;
+    margin: 5px 0;
+    transition: $transition-time;
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+
+  .tapped .nav-menu-bar1 {
+    transform: translate(0, 8px);
+  }
+
+  .tapped .nav-menu-bar2 {
+    opacity: 0;
+  }
+
+  .tapped .nav-menu-bar3 {
+    transform: translate(0, -8px);
+  }
+}

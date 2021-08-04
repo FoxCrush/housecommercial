@@ -1,0 +1,30 @@
+@media (max-width: $max-mobile-width) {
+  nav {
+    position: relative;
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+    max-width: $max-mobile-width;
+    margin: 0 auto 0 auto;
+    max-height: 15vw;
+    min-height: 10vw;
+    transition: $transition-time;
+  }
+  // .hero-section {
+  //   background-color: aquamarine;
+  // }
+}
+@media (min-width: $max-mobile-width) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: bisque;
+  }
+}
+.hero-section {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

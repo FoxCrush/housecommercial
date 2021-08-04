@@ -1,0 +1,21 @@
+body {
+  background-color: rgb(243, 243, 228);
+}
+p {
+  margin: 0;
+  cursor: default;
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+//global vars
+$transition-time: 0.4s;
+$max-mobile-width: 768px;
+
+// @media (max-width: $max-mobile-width) {
+//   body {
+//     background-color: rgb(0, 0, 0);
+//   }
+// }

@@ -1,0 +1,87 @@
+.houses-list-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: block;
+}
+.houses-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: $max-mobile-width) {
+  .houses-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+  }
+}
+.houses-list > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: $transition-time;
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
+  &:hover {
+    box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.16),
+      0px 8px 8px rgba(0, 0, 0, 0.06), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}
+
+@media (min-width: $max-mobile-width) {
+  .houses-list > li {
+    margin: 0;
+    margin-right: 20px;
+    width: 30vw;
+    background-color: rgb(177, 176, 176);
+  }
+}
+.houses-list > li:first-child {
+  margin-top: 0px;
+}
+@media (min-width: $max-mobile-width) {
+  .houses-list > li:last-child {
+    margin-right: 0px;
+  }
+}
+.house-list-item-overlay-container {
+  position: relative;
+  overflow: hidden;
+  .houses-list-image {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  .house-list-item-overlay {
+    position: absolute;
+    opacity: 0;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(143, 179, 247, 0.494);
+    transition: $transition-time;
+  }
+  &:hover .house-list-item-overlay {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+}
+
+.houses-list-textfield-container {
+  width: 100%;
+  padding: 5px 10px;
+  background-color: rgb(177, 176, 176);
+}
+.houses-list-textfield-container > p {
+  font-weight: bold;
+}
+.houses-list-textfield-container > p:first-child {
+  margin-bottom: 5px;
+}
