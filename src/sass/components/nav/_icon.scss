@@ -1,14 +1,14 @@
 @media (max-width: $max-mobile-width) {
   .nav-icon {
     width: 7vmin;
-    margin-right: 4vw;
+    margin: auto 4vw auto 0;
     transition: $transition-time;
   }
 }
 @media (min-width: $max-mobile-width) {
   .nav-icon {
-    width: auto;
-    height: 6vw;
-    margin-right: 4vw;
+    width: 7vmin;
+    height: 6vh;
+    margin: auto 4vw auto 0;
   }
 }

@@ -1,6 +1,7 @@
 .show-specs-button {
-  width: 50%;
-  &:hover {
+  width: 60%;
+  &:hover,
+  &focus {
     color: white;
   }
 }

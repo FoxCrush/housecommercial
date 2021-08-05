@@ -1,7 +1,20 @@
 const refs = {
-    modalButton: document.querySelector('[data-open-modal]'),
+    modalTitleEl: document.querySelector('[data-modal-title]'),
+    closeModalBtnEl: document.querySelector('[modal-close-button]'),
+    houseSpecsModalContainerEl: document.querySelector('[data-modal-container]'),
+    modalView: document.querySelector('[data-modal]'),
+    housesListEl: document.querySelectorAll('[data-houses-list-action]'&& '[data-open-modal]')
 }
-function testFn() {
-    console.log('specs button pushed');
+function openModalFn(e) {
+    refs.modalView.classList.add('isShown')
+    refs.modalTitleEl.innerHTML = ` House #${e.target.id} card`;
 }
-refs.modalButton.addEventListener('click', testFn);
+function closeModalFn(e) {
+    if (e.target === e.currentTarget || e.target === refs.closeModalBtnEl) {
+        refs.modalView.classList.remove('isShown')
+    }
+}
+refs.housesListEl.forEach(element => {
+    element.addEventListener('click', openModalFn);
+});
+refs.modalView.addEventListener('click', closeModalFn);

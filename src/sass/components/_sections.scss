@@ -1,14 +1,13 @@
 @media (max-width: $max-mobile-width) {
   nav {
     position: relative;
-    background-color: bisque;
     display: flex;
     justify-content: space-between;
     max-width: $max-mobile-width;
     margin: 0 auto 0 auto;
     max-height: 15vw;
     min-height: 10vw;
-    transition: $transition-time;
+    // transition: $transition-time;
   }
   // .hero-section {
   //   background-color: aquamarine;
@@ -18,7 +17,8 @@
   nav {
     display: flex;
     justify-content: space-between;
-    background-color: bisque;
+    background-color: rgb(196, 255, 226);
+    border-bottom: 1px solid rgb(128, 128, 128, 0.7);
   }
 }
 .hero-section {

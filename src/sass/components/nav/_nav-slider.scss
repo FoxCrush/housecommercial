@@ -2,7 +2,8 @@
   .nav-slider-container {
     height: 15vw;
     position: absolute;
-    background-color: bisque;
+    // background-color: rgb(247, 247, 211);
+
     opacity: 0;
     pointer-events: none;
     bottom: 5vw;
@@ -13,10 +14,10 @@
     opacity: 1;
     pointer-events: inherit;
     transform: translate(20vw, 19vw);
-    background-color: bisque;
+    background-color: rgb(247, 247, 211);
   }
   .nav-list {
-    background-color: bisque;
+    background-color: rgb(247, 247, 211);
   }
   .nav-list > li {
     margin-top: 25px;
@@ -56,7 +57,7 @@
     color: white;
   }
   .nav-slider-container .nav-list-item-title {
-    background-color: bisque;
+    background-color: rgb(196, 255, 226);
     font-size: 1vw;
     font-weight: bold;
   }
