@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel src/index.html",
-    "build": "parcel build <your entry file>"
+    "build": "parcel build src/index.html --public-url /housecommercial/",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -18,9 +20,13 @@
   "bugs": {
     "url": "https://github.com/FoxCrush/housecommercial/issues"
   },
-  "homepage": "https://github.com/FoxCrush/housecommercial#readme",
+  "homepage": "https://FoxCrush.github.io/housecommercial",
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
+    "parcel-plugin-nuke-dist": "^1.0.1",
     "sass": "^1.37.0"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
