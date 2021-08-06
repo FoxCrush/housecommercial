@@ -19,8 +19,7 @@
 .house-specs-modal-container {
   position: absolute;
   width: 85%;
-  height: fit-content;
-  margin: 40px 15px 10px 15px;
+  margin: 15vh auto;
   padding: 20px;
   border-radius: 5px;
   background-color: $main-background-color;
@@ -44,14 +43,16 @@
 }
 @media (min-width: $max-mobile-width) {
   .modal-close-button {
-    width: 3vw;
-    height: 3vw;
+    width: 5vw;
+    height: 5vw;
   }
 }
 .modal-close-button-icon {
   position: absolute;
+  // scale: 0.8;
   top: 50%;
   left: 50%;
+  width: 2vw;
   transform: translate(-50%, -50%);
   pointer-events: none;
 }

@@ -7,8 +7,10 @@
 }
 @media (min-width: $max-mobile-width) {
   .nav-icon {
-    width: 7vmin;
-    height: 6vh;
-    margin: auto 4vw auto 0;
+    width: 3vw;
+    top: 0;
+    right: 0;
+    position: absolute;
+    transform: translate(-50%, 50%);
   }
 }
