@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🏠 White house Vita Poshtova</title>
     <link rel="stylesheet" href="./sass/main.scss" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.0/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.0/leaflet-src.js"></script>
 </head>
 <body>
     <header>
@@ -17,9 +19,9 @@
             </div>
              <div class="nav-slider-container">
                  <ul class="nav-list">
-                     <li class="nav-list-item"><p class="nav-list-item-title">Houses</p></li>
-                     <li class="nav-list-item"><p class="nav-list-item-title">Gallery</p></li>
-                     <li class="nav-list-item"><p class="nav-list-item-title">Contacts & location</p></li>
+                     <li class="nav-list-item"><p data-scroll-to-houses class="nav-list-item-title">Houses</p></li>
+                     <li class="nav-list-item"><p data-scroll-to-gallery class="nav-list-item-title">Gallery</p></li>
+                     <li class="nav-list-item"><p data-scroll-to-location class="nav-list-item-title">Contacts & location</p></a></li>
                  </ul>
              </div>
 
@@ -60,7 +62,7 @@
         </nav>
     </header>
     <main> <section class="hero-section">
-        <h1 style = "opacity: 0; position: absolute;">houses for sale</h1>
+        <h1 style = "opacity: 0; position: absolute; display: none;">houses for sale</h1>
         <video poster="./media-files/white-house-poster.jpg" controls width="250" class="video-container" src="./media-files/IMG_0645.MP4"></video>
     </section>
     <section class="houses-list-section">
@@ -123,9 +125,10 @@
     </main>
     <footer>
         <div class="footer-container">
+            <a id="location-anchor"></a>
                 <div class="location-contacs-container">
                     <div class="location-container">
-                        <div><img src="./media-files/location.jpg" alt="Location on map"></div>
+                        <div id="map"></div>
                     </div>
                     <div class="contacts-container">
                         <p>Here you'll find any contacs information</p>
