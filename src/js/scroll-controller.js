@@ -8,16 +8,20 @@ const windowRefs = {
     galleryListEl: document.querySelector(".gallery-list")
 }
 let pos = { left: 0, y: 0 };
-function moveToHousesFn() {
+function moveToHousesFn(e) {
+     e.preventDefault();
     windowRefs.HousesViewEl.scrollIntoView({ block: "center", behavior: "smooth" });
 }
-function moveToGalleryFn() {
+function moveToGalleryFn(e) {
+     e.preventDefault();
     windowRefs.GalleryViewEl.scrollIntoView({ block: "center", behavior: "smooth" });
 }
-function moveToLocationFn() {
+function moveToLocationFn(e) {
+     e.preventDefault();
     windowRefs.locationViewEl.scrollIntoView({ block: "center", behavior: "smooth" });
 }
 function mouseDownHandler(e) {
+     e.preventDefault();
         pos = {
         left: windowRefs.galleryListEl.scrollLeft,
         x: e.clientX,
@@ -34,7 +38,8 @@ function mouseMoveHandler(e) {
 
     windowRefs.galleryListEl.scrollLeft = pos.left - dx;
 };
-function mouseUpHandler() {
+function mouseUpHandler(e) {
+     e.preventDefault();
     windowRefs.galleryListEl.style.cursor = 'grab';
     windowRefs.galleryListEl.style.removeProperty('user-select');
     document.removeEventListener('mousemove', mouseMoveHandler);

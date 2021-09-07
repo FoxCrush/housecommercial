@@ -13,6 +13,10 @@
   .contacts-container {
     margin: 5vh;
   }
+  .map-frame {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @media (min-width: $max-mobile-width) {
@@ -27,5 +31,9 @@
   }
   .contacts-container {
     margin: 5vh;
+  }
+  .map-frame {
+    width: 100%;
+    height: 100%;
   }
 }
