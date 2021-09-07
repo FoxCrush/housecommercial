@@ -5,7 +5,9 @@ const windowRefs = {
     HousesViewEl: document.querySelector(".houses-list-section"),
     GalleryViewEl: document.querySelector(".gallery-section"),
     locationViewEl: document.querySelector(".location-contacs-container"),
-    galleryListEl: document.querySelector(".gallery-list")
+    galleryListEl: document.querySelector(".gallery-list"),
+    testBtnEl: document.querySelector(".test-btn"),
+    bodyEl: document.querySelector("#body")
 }
 let pos = { left: 0, y: 0 };
 function moveToHousesFn(e) {
@@ -45,8 +47,17 @@ function mouseUpHandler(e) {
     document.removeEventListener('mousemove', mouseMoveHandler);
     document.removeEventListener('mouseup', mouseUpHandler);
 };
+function testFn(e) {
+    e.preventDefault();
+    console.log('test btn pressed', windowRefs.bodyEl);
+    window.scroll({
+    top: 1000,
+    behavior: "smooth"
+});
+}
 windowRefs.navMenuHousesButton.addEventListener('click', moveToHousesFn);
 windowRefs.navMenuGalleryButton.addEventListener('click', moveToGalleryFn);
 windowRefs.navMenuLocationButton.addEventListener('click', moveToLocationFn);
 windowRefs.galleryListEl.addEventListener('mousedown', mouseDownHandler);
+windowRefs.testBtnEl.addEventListener('click', testFn);
 // windowRefs.galleryListEl.addEventListener('mouseup', mouseUpHandler);

@@ -16,18 +16,17 @@
     background-color: rgb(247, 247, 211);
   }
   .nav-list {
+    padding: 15px 10px 15px 10px;
     background-color: rgb(247, 247, 211);
   }
   .nav-list > li {
-    margin-top: 25px;
+    margin-bottom: 25px;
     &:hover,
     &:focus {
       color: white;
     }
   }
-  //   .nav-list > li:last-child {
-  //     margin-bottom: 0px;
-  //   }
+
   .nav-slider-container .nav-list-item-title {
     font-size: large;
   }
@@ -35,8 +34,6 @@
 @media (min-width: $max-mobile-width) {
   .nav-slider-container {
     width: 50vw;
-    // display: flex;
-    // align-items: center;
     display: block;
   }
   .nav-list {
