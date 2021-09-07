@@ -50,10 +50,10 @@ function mouseUpHandler(e) {
 function testFn(e) {
     e.preventDefault();
     console.log('test btn pressed', windowRefs.bodyEl);
-    window.scroll({
-    top: 1000,
-    behavior: "smooth"
-});
+    window.scrollTo({
+        top: 1000,
+        behavior: 'smooth'
+    });
 }
 windowRefs.navMenuHousesButton.addEventListener('click', moveToHousesFn);
 windowRefs.navMenuGalleryButton.addEventListener('click', moveToGalleryFn);
