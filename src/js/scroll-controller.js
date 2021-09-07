@@ -1,3 +1,4 @@
+const zenScroll = require("zenscroll");
 const windowRefs = {
     navMenuHousesButton: document.querySelector("[data-scroll-to-houses]"),
     navMenuGalleryButton: document.querySelector("[data-scroll-to-gallery]"),
@@ -47,13 +48,13 @@ function mouseUpHandler(e) {
     document.removeEventListener('mousemove', mouseMoveHandler);
     document.removeEventListener('mouseup', mouseUpHandler);
 };
+function secondTestFn() {
+    console.log('scrolling is done');
+}
 function testFn(e) {
     e.preventDefault();
-    console.log('test btn pressed', windowRefs.bodyEl);
-    window.scrollTo({
-        top: 1000,
-        behavior: 'smooth'
-    });
+    console.log('test btn pressed', zenScroll.to,windowRefs.locationViewEl);
+    zenScroll.to(windowRefs.locationViewEl, 500, secondTestFn);
 }
 windowRefs.navMenuHousesButton.addEventListener('click', moveToHousesFn);
 windowRefs.navMenuGalleryButton.addEventListener('click', moveToGalleryFn);
