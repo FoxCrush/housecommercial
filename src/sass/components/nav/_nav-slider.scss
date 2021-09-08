@@ -5,14 +5,14 @@
 
     opacity: 0;
     pointer-events: none;
-    bottom: 5vw;
+    top: 12vw;
     left: -20vw;
     transition: $transition-time;
   }
   .nav-slider-container.tapped {
     opacity: 1;
     pointer-events: inherit;
-    transform: translate(20vw, 19vw);
+    transform: translate(20vw, 0);
     background-color: rgb(247, 247, 211);
   }
   .nav-list {
@@ -55,7 +55,7 @@
     }
   }
   .nav-slider-container .nav-list-item-title {
-    background-color: rgb(196, 255, 226);
+    background-color: rgb(196, 220, 255);
     font-size: 1vw;
     font-weight: bold;
   }

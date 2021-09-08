@@ -6,22 +6,23 @@ const windowRefs = {
     HousesViewEl: document.querySelector(".houses-list-section"),
     GalleryViewEl: document.querySelector(".gallery-section"),
     locationViewEl: document.querySelector(".location-contacs-container"),
-    galleryListEl: document.querySelector(".gallery-list"),
-    testBtnEl: document.querySelector(".test-btn"),
-    bodyEl: document.querySelector("#body")
+    galleryListEl: document.querySelector(".gallery-list")
 }
 let pos = { left: 0, y: 0 };
 function moveToHousesFn(e) {
-     e.preventDefault();
-    windowRefs.HousesViewEl.scrollIntoView({ block: "center", behavior: "smooth" });
+    e.preventDefault();
+    zenScroll.to(windowRefs.HousesViewEl, 500);
+    // windowRefs.HousesViewEl.scrollIntoView({ block: "center", behavior: "smooth" });
 }
 function moveToGalleryFn(e) {
-     e.preventDefault();
-    windowRefs.GalleryViewEl.scrollIntoView({ block: "center", behavior: "smooth" });
+    e.preventDefault();
+    zenScroll.to(windowRefs.GalleryViewEl, 500);
+    // windowRefs.GalleryViewEl.scrollIntoView({ block: "center", behavior: "smooth" });
 }
 function moveToLocationFn(e) {
-     e.preventDefault();
-    windowRefs.locationViewEl.scrollIntoView({ block: "center", behavior: "smooth" });
+    e.preventDefault();
+    zenScroll.to(windowRefs.locationViewEl, 500);
+    // windowRefs.locationViewEl.scrollIntoView({ block: "center", behavior: "smooth" });
 }
 function mouseDownHandler(e) {
      e.preventDefault();
@@ -48,17 +49,8 @@ function mouseUpHandler(e) {
     document.removeEventListener('mousemove', mouseMoveHandler);
     document.removeEventListener('mouseup', mouseUpHandler);
 };
-function secondTestFn() {
-    console.log('scrolling is done');
-}
-function testFn(e) {
-    e.preventDefault();
-    console.log('test btn pressed', zenScroll.to,windowRefs.locationViewEl);
-    zenScroll.to(windowRefs.locationViewEl, 500, secondTestFn);
-}
+
 windowRefs.navMenuHousesButton.addEventListener('click', moveToHousesFn);
 windowRefs.navMenuGalleryButton.addEventListener('click', moveToGalleryFn);
 windowRefs.navMenuLocationButton.addEventListener('click', moveToLocationFn);
 windowRefs.galleryListEl.addEventListener('mousedown', mouseDownHandler);
-windowRefs.testBtnEl.addEventListener('click', testFn);
-// windowRefs.galleryListEl.addEventListener('mouseup', mouseUpHandler);
