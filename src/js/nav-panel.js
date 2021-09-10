@@ -7,42 +7,25 @@ const navRefs = {
 
 function onNavMenuButtonClick(e) {
     e.preventDefault();
-    console.log(getComputedStyle(navRefs.navMenuSlider).opacity);
-    if (getComputedStyle(navRefs.navMenuSlider).opacity == 0) {
-        console.log('on nav click 1',navRefs.navMenuButton.classList.contains("tapped"));
-        console.log('on nav click 2',navRefs.navMenuButton.classList.contains("tapped"));
-        navRefs.navMenuButton.classList.add("tapped");
-        navRefs.navMenuSlider.classList.add("tapped");
-        console.log('on nav click 3',navRefs.navMenuButton.classList.contains("tapped"));
-        // window.addEventListener('mousedown', onOtherPlaceClick);
-    } else {
-        console.log('on nav to close', navRefs.navMenuButton.classList.contains("tapped"));
-        // window.removeEventListener('mousedown', onOtherPlaceClick);
-        navRefs.navMenuButton.classList.remove("tapped");
-        navRefs.navMenuSlider.classList.remove("tapped");
-
+    if (!navRefs.navMenuSlider.classList.contains("tapped")) {
+            navRefs.navMenuButton.classList.add("tapped");
+    navRefs.navMenuSlider.classList.add("tapped");
+    setTimeout(() => {
+        console.log('listner added');
+        window.addEventListener('click', onOtherPlaceClick);
+    }, 200);
     }
-    // navRefs.navMenuButton.classList.toggle("tapped");
-    // navRefs.navMenuSlider.classList.toggle("tapped");
+
 }
 function onOtherPlaceClick(e) {
     e.preventDefault();
-    // if (e.target != navRefs.navMenuListEl) {
-    //     console.log('other click 1', e.target, e.currentTarget);
-    //     navRefs.navMenuButton.classList.remove("tapped");
-    //     navRefs.navMenuSlider.classList.remove("tapped");
-    // }
-
-    if (getComputedStyle(navRefs.navMenuSlider).opacity ===1) {
-        console.log('other click 1',navRefs.navMenuButton.classList.contains("tapped"));
-        // window.removeEventListener('mousedown', onOtherPlaceClick);
-        console.log('other click 2',navRefs.navMenuButton.classList.contains("tapped"));
+    if (navRefs.navMenuButton.classList.contains("tapped") && e.target !== navRefs.navMenuListEl) {
+        window.removeEventListener('click', onOtherPlaceClick);
+        console.log('listner removed');
         navRefs.navMenuButton.classList.remove("tapped");
         navRefs.navMenuSlider.classList.remove("tapped");
-        console.log('other click 3',navRefs.navMenuButton.classList.contains("tapped"));
     }
 }
-navRefs.navMenuButton.addEventListener('mousedown', onNavMenuButtonClick);
-// window.addEventListener('mousedown', onOtherPlaceClick);
-// window.addEventListener('click', onOtherPlaceClick);
+navRefs.navMenuButton.addEventListener('click', onNavMenuButtonClick);
+
 

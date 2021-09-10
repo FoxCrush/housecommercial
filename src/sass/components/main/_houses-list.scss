@@ -72,7 +72,8 @@
     background-color: rgba(143, 179, 247, 0.494);
     transition: $transition-time;
   }
-  &:hover .house-list-item-overlay {
+  &:hover .house-list-item-overlay,
+  &:active .house-list-item-overlay {
     opacity: 1;
     transform: translateY(-100%);
   }
