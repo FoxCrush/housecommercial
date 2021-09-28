@@ -12,7 +12,6 @@ function onNavMenuButtonClick(e) {
         navRefs.navMenuButton.classList.add("tapped");
         navRefs.navMenuSlider.classList.add("tapped");
         setTimeout(() => {
-            console.log('listner added');
             navRefs.bodyEl.addEventListener('click', onOtherPlaceClick);
     }, 200);
     }
@@ -22,7 +21,6 @@ function onOtherPlaceClick(e) {
     e.preventDefault();
     if (navRefs.navMenuButton.classList.contains("tapped") && e.target !== navRefs.navMenuListEl) {
         navRefs.bodyEl.removeEventListener('click', onOtherPlaceClick);
-        console.log('listner removed');
         navRefs.navMenuButton.classList.remove("tapped");
         navRefs.navMenuSlider.classList.remove("tapped");
     }
