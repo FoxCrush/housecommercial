@@ -7,15 +7,24 @@ const refs = {
     bodyEl: document.querySelector('body')
 }
 function openModalFn(e) {
-    refs.modalView.classList.add('isShown')
+    e.preventDefault();
+    console.log(window.scrollX);
+    refs.bodyEl.style.top = `-${window.scrollY}px`;
+    refs.bodyEl.style.position = 'fixed';
+    console.log(window.scrollY);
+    refs.modalView.classList.add('isShown');
     refs.modalTitleEl.innerHTML = ` House #${e.target.id} card`;
-    refs.bodyEl.style.overflow = 'hidden';
+
 }
 function closeModalFn(e) {
     if (e.target === e.currentTarget || e.target === refs.closeModalBtnEl) {
-        refs.modalView.classList.remove('isShown')
+        refs.modalView.classList.remove('isShown');
+        const scrollY = document.body.style.top;
+        refs.bodyEl.style.position = '';
+        refs.bodyEl.style.top = '';
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
-    refs.bodyEl.style.overflow = 'auto';
+
 }
 refs.housesListEl.forEach(element => {
     element.addEventListener('click', openModalFn);
