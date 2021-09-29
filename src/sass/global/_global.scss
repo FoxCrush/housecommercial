@@ -6,6 +6,13 @@ $main-background-color-lighter: rgb(255, 255, 240);
 $main-background-color-darker: rgb(247, 247, 184);
 body {
   background-color: $main-background-color;
+  position: absolute;
+  width: 100%;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 p {
   margin: 0;

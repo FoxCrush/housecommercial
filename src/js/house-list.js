@@ -8,17 +8,21 @@ const refs = {
 refs.houseListEl.addEventListener('click', onImageClickHandler);
 let currentHouseIndex = 0;
 function onImageClickHandler(e) {
+    e.preventDefault();
     if (refs.bodyEl.offsetWidth > 750) {
+        refs.houseListOverlayEl.forEach(element => {
+            element.classList.remove('overlay-visible');
+        });
         return;
     }
         if (e.target.classList.contains('overlay-visible')) {
         e.target.classList.remove('overlay-visible');
             return;
     }
-    e.preventDefault();
     if (e.target.getAttribute("data-house-number")) {
     currentHouseIndex = e.target.getAttribute("data-house-number").slice(-1) - 1;
     }
-    refs.houseListOverlayEl[currentHouseIndex].classList.add('overlay-visible');
-
+    if (e.target.nodeName === "IMG") {
+        refs.houseListOverlayEl[currentHouseIndex].classList.add('overlay-visible');
+    }
 }

@@ -8,10 +8,8 @@ const refs = {
 }
 function openModalFn(e) {
     e.preventDefault();
-    console.log(window.scrollX);
     refs.bodyEl.style.top = `-${window.scrollY}px`;
     refs.bodyEl.style.position = 'fixed';
-    console.log(window.scrollY);
     refs.modalView.classList.add('isShown');
     refs.modalTitleEl.innerHTML = ` House #${e.target.id} card`;
 
