@@ -6,7 +6,9 @@ const windowRefs = {
     HousesViewEl: document.querySelector(".houses-list-section"),
     GalleryViewEl: document.querySelector(".gallery-section"),
     locationViewEl: document.querySelector(".location-contacs-container"),
-    galleryListEl: document.querySelector(".gallery-list")
+    galleryListEl: document.querySelector(".gallery-list"),
+    toTopButton: document.querySelector("[data-scroll-to-top]"),
+    topElement: document.querySelector(".nav-menu-button-container")
 }
 let pos = { left: 0, y: 0 };
 function moveToHousesFn(e) {
@@ -23,6 +25,10 @@ function moveToLocationFn(e) {
     e.preventDefault();
     zenScroll.to(windowRefs.locationViewEl, 500);
     // windowRefs.locationViewEl.scrollIntoView({ block: "center", behavior: "smooth" });
+}
+function moveToTopFn(e) {
+    e.preventDefault();
+    zenScroll.to(windowRefs.topElement, 500);
 }
 function mouseDownHandler(e) {
      e.preventDefault();
@@ -54,3 +60,4 @@ windowRefs.navMenuHousesButton.addEventListener('click', moveToHousesFn);
 windowRefs.navMenuGalleryButton.addEventListener('click', moveToGalleryFn);
 windowRefs.navMenuLocationButton.addEventListener('click', moveToLocationFn);
 windowRefs.galleryListEl.addEventListener('mousedown', mouseDownHandler);
+windowRefs.toTopButton.addEventListener('click', moveToTopFn);

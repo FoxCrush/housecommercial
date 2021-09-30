@@ -16,7 +16,6 @@ function closeModalFn(e) {
         refs.galleryModalViewEl.classList.remove('isShown');
         const scrollY = document.body.style.top;
         refs.bodyEl.style.position = '';
-        console.log('hide gallery modal')
         refs.bodyEl.style.top = '';
         window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
@@ -29,7 +28,6 @@ refs.galleryList.addEventListener('click', (e) => {
     }
 
     const currentMainViewPosition = window.scrollY;
-    console.log(currentMainViewPosition);
     const currentImgOptions = {
         src: e.target.src,
         alt: e.target.alt,
@@ -41,7 +39,6 @@ refs.galleryList.addEventListener('click', (e) => {
     refs.galleryModalViewEl.classList.add('isShown');
     refs.bodyEl.style.top = `-${currentMainViewPosition}px`;
     refs.bodyEl.style.position = 'fixed';
-    console.log(currentMainViewPosition);
 })
 refs.galleryModalViewEl.addEventListener('click', closeModalFn);
 
